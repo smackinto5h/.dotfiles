@@ -1,7 +1,7 @@
 # this is a modified version of my original config. i found that even though i'm a pretty fast typer sometimes i would inadvertently trigger the hold function 
 # on say ctrl or alt which would tweak what i was doing popping up menus or whatever. so here i've modified it to fit ME. you can change these times however you like. 
 # please note that those numbers (400, 200, 600, 200) are represented in Miliseconds. also you don't have to download my file you can simply copy the code into your own 
-# text file and save it as *.kbd and you have your very own config file. remember as always to delete out all these comments for proper function. thanks.
+# text file and save it as *.kbd and you have your very own config file. remember as always to delete out all these comments for proper function. thanks. 
 
 
 
