@@ -1,6 +1,6 @@
 # this is my KMonad script for the P50 ThinkPad running Arch Linux.
 # to ensure this script works for you follow the instructions in the comments, then delete out the whole comments including the #
-# i hope this helps someone. this shit took me HOURS to trouble shoot but i finally got it. 
+# i hope this helps someone. this shit took me HOURS to trouble shoot but i finally got it.  
 
 (defcfg
   input  (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd") # This is the Path and name of MY p50 keyboard yours may be different so check
