@@ -1,0 +1,14 @@
+configuration {
+	display-drun: "Applications:";
+	display-window: "Windows:";
+	drun-display-format: "{icon} {name}";
+	font: "JetBrainsMono Nerd Font Medium 10";
+	modi: "window,run,drun";
+	show-icons: true;
+	icon-theme: "WhiteSur-dark";
+}
+
+@theme "/usr/share/rofi/themes/solarized_alternate.rasi"
+
+
+# rofi config -- as always delete comments.
