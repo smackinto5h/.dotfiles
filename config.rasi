@@ -12,3 +12,4 @@ configuration {
 
 
 # rofi config -- as always delete comments.
+# add bindsym Mod1+space exec rofi -show drun  to the i3config to set Mod + space as trigger for rofi
