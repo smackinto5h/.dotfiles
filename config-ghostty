@@ -1,0 +1,7 @@
+theme = Blue Matrix
+window-decoration = false
+title = Ghostty
+font-size = 14
+background-opacity = 0.9
+background-blur = true
+
