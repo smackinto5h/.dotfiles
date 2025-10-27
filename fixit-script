@@ -1,0 +1,54 @@
+#!/bin/bash
+set -e
+
+# --- Step 0: Temporary internet required ---
+
+# --- Step 1: Fix dpkg if it was broken ---
+sudo dpkg --configure -a || true
+sudo apt install -f -y
+
+# --- Step 2: Remove STA driver (wl) if installed ---
+sudo apt purge -y bcmwl-kernel-source
+echo "blacklist wl" | sudo tee /etc/modprobe.d/blacklist-wl.conf
+
+# --- Step 3: Install b43 firmware for BCM4331 ---
+sudo apt update
+sudo apt install -y firmware-b43-installer
+
+# --- Step 4: Load the driver ---
+sudo modprobe -r b43 || true
+sudo modprobe b43
+
+# --- Step 5: Wait for interface to appear ---
+sleep 3
+echo "Available interfaces:"
+ip link
+
+# --- Step 6: Create Netplan config ---
+read -p "Enter Wi-Fi interface name (e.g., wlp2s0): " WIFI_IF
+read -p "Enter Wi-Fi SSID: " SSID
+read -s -p "Enter Wi-Fi password: " PASS
+echo
+
+NETPLAN_FILE="/etc/netplan/01-wifi.yaml"
+
+sudo tee $NETPLAN_FILE > /dev/null <<EOF
+network:
+  version: 2
+  wifis:
+    $WIFI_IF:
+      dhcp4: true
+      optional: true
+      access-points:
+        "$SSID":
+          password: "$PASS"
+      nameservers:
+        addresses:
+          - 1.1.1.1
+          - 9.9.9.9
+EOF
+
+# --- Step 7: Apply Netplan ---
+sudo netplan apply
+
+echo "Wi-Fi setup complete. Interface should be up with DHCP and Cloudflare/Quad9 DNS."
