@@ -1,3 +1,4 @@
+
 scan_timeout = 100
 command_timeout = 500
 
@@ -7,7 +8,7 @@ follow_symlinks = false
 add_newline = false
 
 format = """
-  \
+ \
 $directory\
 ${custom.giturl}\
 $git_branch\
@@ -35,15 +36,25 @@ truncation_length = 4
 # "~" = "󰟒"
 "~" = "󱂵 "
 #"documents" = " 󰈙 "
+#"Documents" = " 󰈙 "
+"Documents" = " 󰷎 "
 "documents" = " 󰷎 "
 #"downloads" = "  "
+#"Downloads" = "  "
 "downloads" = " 󱃩 "
+"Downloads" = " 󱃩 "
 #"music" = "  "
+#"Music" = "  "
 "music" = " 󱍚 "
+"Music" = " 󱍚 "
 #"pictures" = "  "
+#"Pictures" = "  "
 "pictures" = " 󰉏 "
+"Pictures" = " 󰉏 "
 "developer" = " 󰲋 "
+"Developer" = " 󰲋 "
 "others" = "  "
+"Others" = "  "
 ".config" = "  "
 ".ssh" = " 󰣀 "
 ".vim" = "  "
@@ -54,11 +65,13 @@ truncation_length = 4
 "notes" = " 󱧷 " 
 "pdf" = " 󰈦 " 
 "lab" = " 󰱠 "
+"Lab" = " 󰱠 "
 "projects" = "  "
 "github" = "  "
-
-
-
+"scripts" = "  "
+"Scripts" = "  "
+"Python" = "  "
+"python" = "  "
 
 
 [username]
@@ -424,4 +437,3 @@ sky = "#7E9CD8"
 sapphire = "#D27E99" # dir fg
 blue = "#7E9CD8"
 lavender = "#E6C384"   # git branch fg
-
